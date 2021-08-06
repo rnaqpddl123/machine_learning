@@ -1,0 +1,4 @@
+conda env export --name ml > ml.yml
+-> 가상환경의 환경정보 추출
+-> conda env create -f 파일명.yml 하게되면
+-> 같은 환경정보를 가진 가상환경을 만들어줌
