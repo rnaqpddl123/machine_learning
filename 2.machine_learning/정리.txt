@@ -1,0 +1,51 @@
+matplotlib는 시각화의 기초이자 기본 다른 시각화 라이브러리도 이걸 기반으로함. 잘알아두자
+
+데이터 전처리
+- 결측치
+
+- 이상치
+    - 오류:NA처리
+    - 극단치
+        - 유지
+        - 다른값으로 대체(결측치, 한계값)
+
+
+
+- 범주형
+    - LabelEncoding : Tree계열
+    - OneHotEncoding : 선형모델(컬람간의 계산을 통해 추론결과가 나오는 모델)
+
+- 연속형
+    - Feature Scaling(선형모델) - Feature(컬럼) 간의 값의 범위를 맞춰주는 전처리
+        - StandardScaler : 평균-0, 표준편차-1 (표준화)
+        - MinMaxScaler : 최소값-0, 최대값-1
+
+- 범주형처리 : 전체 데이터셋을 기준으로 처리
+- Scaling : 학습-Train set, 변환:Train/Val/Test
+
+
+---------------------------------------------------------------------------------------
+분류 평가지표
+
+- accuracy : accuracy_score() (단순한게 예측한게 얼마나 많이 맞췄나)
+
+- recall/sensitibity/TPR : recall_score()  (재현율,민감도)(실제 양성중에 얼마나 많이 양성을 많이 맞췄는지)
+
+- precision(PPV) : precision_score() (정밀도)(양성으로 예측한것중에 실제 양성이얼마나 많은지)
+
+-  f1 score : f1_score() (정밀도와 재현율의 조화평균 점수)
+
+
+	- classification_report() : f1_score(), recall_score(), precision_score() 3개의 점수와 accuracy를 보여줌
+	
+	- confusion_matraix() : (혼동함수)  0번축을예측 1번축을 실제로 2x2배열로 만듬
+
+- preccision_recall_curve(PR curve), average_precision_score(ap_score)
+
+- roc_curve, roc_auc_score
+
+아래 3개는 그래프 그려줌
+plot_preccision_recall_curve(학습한모델, X, y) ax,name은 추가가능
+plot_roc_curve()
+plot_confusion_matraix()
+
